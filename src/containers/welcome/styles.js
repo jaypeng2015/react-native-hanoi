@@ -21,7 +21,7 @@ export default {
   },
   desc: {
     fontFamily: 'Cochin',
-    color: 'white'
+    color: 'white',
   },
   title: {
     fontFamily: 'Cochin',
@@ -38,10 +38,10 @@ export default {
     height: 30,
     alignSelf: 'center',
     borderRadius: 10,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   buttonText: {
     alignSelf: 'center',
     fontFamily: 'Cochin',
-  }
-}
+  },
+};

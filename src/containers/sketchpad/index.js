@@ -1,10 +1,10 @@
-import React, { Component, View, Text } from "react-native";
+import React, { Component, View, Text } from 'react-native';
 
 class Root extends Component {
   render() {
     return (
       <View>
-      <Text>This is the sketchpad.</Text>
+        <Text>This is the sketchpad.</Text>
       </View>
       );
   }
