@@ -1,4 +1,4 @@
-import { MOVE_DISC, START_CALCULATING, FINISH_CALCULATING } from './action-types';
+import { START_CALCULATING, FINISH_CALCULATING, MOVE_DISC } from './action-types';
 
 function startCalculating() {
   return {
@@ -15,10 +15,10 @@ function finishCalculating(stepsRemaining) {
   };
 }
 
-function moveDisc(discNumber) {
+function moveDisc(stepsRemaining) {
   return {
     type: MOVE_DISC,
-    discNumber,
+    stepsRemaining,
   };
 }
 

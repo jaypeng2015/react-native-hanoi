@@ -1,8 +1,9 @@
-import { START_CALCULATING, FINISH_CALCULATING } from '../actions/action-types';
+import { START_CALCULATING, FINISH_CALCULATING, MOVE_DISC } from '../actions/action-types';
 
 const initialState = {
   calculating: false,
   stepsRemaining: [],
+  stepsMoved: [],
 };
 
 export default function sketchpadReducer(state = initialState, action = {}) {
@@ -20,6 +21,16 @@ export default function sketchpadReducer(state = initialState, action = {}) {
         ...state,
         calculating: action.calculating,
         stepsRemaining: action.stepsRemaining,
+      };
+    },
+
+    [MOVE_DISC]: () => {
+      const steps = action.stepsRemaining.slice();
+      const step = steps.shift();
+      return {
+        ...state,
+        stepsRemaining: steps,
+        stepsMoved: state.stepsMoved.concat(step),
       };
     },
   };

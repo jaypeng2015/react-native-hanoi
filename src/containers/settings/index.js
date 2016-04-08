@@ -19,7 +19,7 @@ class Settings extends Component {
       this.props.dispatch(SettingsAction.changeDiscNumber(null));
     }
 
-    if (this._isNumeric(number) && (parseInt(number, 10) <= 20)) {
+    if (this._isNumeric(number) && (parseInt(number, 10) <= 15)) {
       this.props.dispatch(SettingsAction.changeDiscNumber(parseInt(number, 10)));
     }
   }
@@ -41,7 +41,7 @@ class Settings extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.label}>Please input a disk number (1 - 20):</Text>
+        <Text style={styles.label}>Please input a disk number (1 - 15):</Text>
         <TextInput ref="disc" style={styles.numberInput} keyboardType={"numeric"} value={this.props.discNumber ? this.props.discNumber.toString(10) : ''} autoCorrect={false} autoFocus={true}
           returnKeyType="go" blurOnSubmit={true} onChangeText={this._changeDiscNumber.bind(this)} />
         <View style={styles.buttons}>
