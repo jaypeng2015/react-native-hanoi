@@ -1,13 +1,9 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-const data = (state = {}, action) => {
-  return {
-    ...state
-  }
-};
+import settings from './settings';
 
 const rootReducer = combineReducers({
-  data
+  settings,
 });
 
 export default rootReducer;
