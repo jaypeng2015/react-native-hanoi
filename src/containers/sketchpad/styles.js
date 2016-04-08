@@ -6,5 +6,8 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
   },
-
+  progress: {
+    borderRadius: 10,
+    height: 20,
+  },
 };

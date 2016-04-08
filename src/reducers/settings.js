@@ -4,7 +4,7 @@ const initialState = {
   discNumber: 3,
 };
 
-export default function feedbackReducer(state = initialState, action = {}) {
+export default function settingsReducer(state = initialState, action = {}) {
   const reducers = {
 
     [CHANGE_DISC_NUMBER]: () => {
