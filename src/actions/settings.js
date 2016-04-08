@@ -1,4 +1,4 @@
-import { CHANGE_DISC_NUMBER } from './action-types';
+import { CHANGE_DISC_NUMBER, START } from './action-types';
 
 function changeDiscNumber(discNumber) {
   return {
@@ -7,7 +7,14 @@ function changeDiscNumber(discNumber) {
   };
 }
 
+function start(mode) {
+  return {
+    type: START,
+    mode,
+  };
+}
 
 export default {
   changeDiscNumber,
+  start,
 };

@@ -16,9 +16,9 @@ class Root extends Component {
         {() => (
            <Router>
              <Scene key="root" hideNavBar="{true}">
-               <Scene key="welcome" component={Welcome} />
-               <Scene key="settings" component={Settings} />
-               <Scene key="sketchpad" component={Sketchpad} />
+               <Scene key="welcome" component={Welcome} type="replace" />
+               <Scene key="settings" component={Settings} type="replace" />
+               <Scene key="sketchpad" component={Sketchpad} type="replace" />
              </Scene>
            </Router>
          )}

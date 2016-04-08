@@ -1,4 +1,4 @@
-import { CHANGE_DISC_NUMBER } from '../actions/action-types';
+import { CHANGE_DISC_NUMBER, START } from '../actions/action-types';
 
 const initialState = {
   discNumber: 3,
@@ -11,6 +11,13 @@ export default function feedbackReducer(state = initialState, action = {}) {
       return {
         ...state,
         discNumber: action.discNumber,
+      };
+    },
+
+    [START]: () => {
+      return {
+        ...state,
+        mode: action.mode,
       };
     },
   };

@@ -1,13 +1,40 @@
-import React, { Component, View, Text } from 'react-native';
+import React, { Component, PropTypes, View, Text } from 'react-native';
+import { connect } from 'react-redux/native';
+import { bindActionCreators } from 'redux';
 
-class Root extends Component {
+import styles from './styles';
+import SketchpadAction from '../../actions/sketchpad';
+
+class Sketchpad extends Component {
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    discNumber: PropTypes.number,
+    mode: PropTypes.string,
+  };
+
   render() {
+    const { discNumber, mode } = this.props;
     return (
-      <View>
-        <Text>This is the sketchpad.</Text>
+      <View style={styles.container}>
+        <Text style={{ color: 'white' }}>
+          {`This is the sketchpad. ${discNumber} disks ${mode}.`}
+        </Text>
       </View>
       );
   }
 }
 
-export default Root;
+const mapStateToProps = (state) => ({
+  discNumber: state.settings.discNumber,
+  mode: state.settings.mode,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: {
+    sketchpad: bindActionCreators(SketchpadAction, dispatch),
+  },
+  dispatch,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sketchpad);
