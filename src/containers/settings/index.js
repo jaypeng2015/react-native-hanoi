@@ -13,6 +13,14 @@ class Settings extends Component {
     discNumber: PropTypes.number,
   };
 
+  constructor(props) {
+    super(props);
+
+    this._changeDiscNumber = this._changeDiscNumber.bind(this);
+    this._start = this._start.bind(this);
+    this._demo = this._demo.bind(this);
+  }
+
   _changeDiscNumber(text) {
     const number = text.trim();
     if (!number) {
@@ -43,14 +51,14 @@ class Settings extends Component {
       <View style={styles.container}>
         <Text style={styles.label}>Please input a disk number (1 - 15):</Text>
         <TextInput ref="disc" style={styles.numberInput} keyboardType={"numeric"} value={this.props.discNumber ? this.props.discNumber.toString(10) : ''} autoCorrect={false} autoFocus={true}
-          returnKeyType="go" blurOnSubmit={true} onChangeText={this._changeDiscNumber.bind(this)} />
+          returnKeyType="go" blurOnSubmit={true} onChangeText={this._changeDiscNumber} />
         <View style={styles.buttons}>
-          <TouchableHighlight onPress={this._demo.bind(this)}>
+          <TouchableHighlight onPress={this._demo}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Demo</Text>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight onPress={this._start.bind(this)}>
+          <TouchableHighlight onPress={this._start}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Start</Text>
             </View>
