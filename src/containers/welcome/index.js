@@ -28,7 +28,7 @@ class Welcome extends Component {
             {"    3) No disk may be placed on top of a smaller disk."}
           </Text>
           <Text style={styles.desc}>
-            {"The minimum number of moves required to solve a Tower of Hanoi puzzle is 2n - 1, where n is the number of disks."}
+            {"The minimum number of moves required to solve a Tower of Hanoi puzzle is 2^n - 1, where n is the number of disks."}
           </Text>
         </View>
         <TouchableHighlight onPress={Actions.settings}>
@@ -40,7 +40,5 @@ class Welcome extends Component {
       );
   }
 }
-
-export default Welcome;
 
 export default Welcome;

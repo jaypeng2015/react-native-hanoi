@@ -24,7 +24,6 @@ class Sketchpad extends Component {
       setTimeout(() => {
         const steps = hanoi(discNumber);
         dispatch(SketchpadAction.finishCalculating(steps));
-        console.log(2000 / (discNumber - 3))
         this.interval = setInterval(this._tick.bind(this), 500 / (discNumber > 2 ? (discNumber - 2) : 1));
       }, 100);
     }
