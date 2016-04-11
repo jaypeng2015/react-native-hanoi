@@ -50,8 +50,7 @@ class Settings extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.label}>Please input a disk number (1 - 15):</Text>
-        <TextInput ref="disc" style={styles.numberInput} keyboardType={"numeric"} value={this.props.discNumber ? this.props.discNumber.toString(10) : ''} autoCorrect={false} autoFocus={true}
-          returnKeyType="go" blurOnSubmit={true} onChangeText={this._changeDiscNumber} />
+        <TextInput ref="disc" style={styles.numberInput} keyboardType={"numeric"} value={this.props.discNumber ? this.props.discNumber.toString(10) : ''} autoCorrect={false} autoFocus returnKeyType="go" blurOnSubmit onChangeText={this._changeDiscNumber} />
         <View style={styles.buttons}>
           <TouchableHighlight onPress={this._demo}>
             <View style={styles.button}>

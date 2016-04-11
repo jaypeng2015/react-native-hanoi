@@ -9,7 +9,7 @@ import Sketchpad from '../../containers/sketchpad';
 
 const store = configureStore();
 
-class Root extends Component {
+class Root extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <Provider store={store}>

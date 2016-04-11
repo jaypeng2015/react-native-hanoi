@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
-import createLogger from "redux-logger";
-import rootReducer from "../reducers";
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
+import rootReducer from '../reducers';
 
 const loggerMiddleware = createLogger();
 
@@ -10,7 +10,7 @@ const createStoreWithMiddleware = applyMiddleware(
   loggerMiddleware
 )(createStore);
 
-const configureStore = function(initialState: Object = {}): Function {
+const configureStore = (initialState : Object = {}) => {
   return createStoreWithMiddleware(rootReducer, initialState);
 };
 
